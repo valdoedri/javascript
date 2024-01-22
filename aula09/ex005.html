@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p id="para">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>  // Pega o valor do primeiro paragrafo da página ('p')[0]
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText + '<br><br>') // Mostra o texto ta TAG
+        window.document.write(p1.innerHTML + '<br><br>') // Mostra o text com HTML da TAG
+        
+        var d1 = window.document.getElementById('msg') // Pega o valor da TAG pelo ID
+        window.document.write(d1.innerText) // Mosta o valor da TAG
+
+        var p2 = window.document.querySelector('p#para') // Pega o valor da TAG pelo SELETOR
+        p2.style.color = 'yellow'     // Altera o estilo da TAG
+        p2.style.background = 'green' // Altera o estilo da TAG    
+    </script>
+</body>
+</html>

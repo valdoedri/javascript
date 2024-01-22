@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        div#area {
+            font: normal 20pt arial;
+            background-color: rgb(23, 180, 23);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"> <!-- sem declarar função, o JavaScript monitora -->
+        Interaja...
+    </div>    
+
+    <script>
+        // Criando variavel global
+        var a = window.document.getElementById('area')  
+        // Monitora os eventos e executa no objeto da ID
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sai)        
+
+        function clicar() { // Ao clicar muda o texto da <DIV>            
+            a.innerText = "Cliquei aqui!"
+        }
+
+        function entrar() { // Ao entrar na <DIV> muda o texto da <DIV>
+            a.innerText = "Entrei na DIV"
+        }
+
+        function sai() { // Ao sair da <DIV> muda o texto da <DIV>
+            a.innerText = "O ponteiro saiu!"
+        }
+    </script>
+</body>
+</html>

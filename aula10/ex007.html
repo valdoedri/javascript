@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Somando valores</h1>
+    <input type="number" name="txtn1" id="txtn1">+<input type="number" name="txtn2" id="txtn2">
+    <input type="submit" value="Somar" onclick="somar()">
+    <h2 id="total">Resultado é: </h2>
+
+    <script>
+        function somar() {
+        var n1 = window.document.getElementById('txtn1')
+        var n2 = window.document.getElementById('txtn2')
+        var tt = window.document.getElementById('total')
+        n1 = Number(n1.value) // Convert String para Number
+        n2 = Number(n2.value)
+
+        var soma = n1 + n2
+
+        tt.innerHTML = `O resultado da soma entre ${n1} e ${n2} é ${soma}.`
+        }
+    </script>
+    
+</body>
+</html>
