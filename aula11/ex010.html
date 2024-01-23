@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p>velocidade do carro: <input type="text" name="txtvel" id="itxtvel"></p>
+    <p><input type="button" value="Verificar" onclick="verifica()"></p>
+    <p>A velocidade máxima permitida é de 50KM/h.</p>
+    <p id="res"></p>
+
+    <script>
+        function verifica() {
+            var vel = window.document.getElementById('itxtvel')
+            var permitido = 50
+            var resultado = window.document.getElementById('res')
+            if (vel.value > permitido) {
+                resultado.innerHTML = `Sua velcidade de <strong>${vel.value}KM/h</strong> é maior que o permitido.`
+                resultado.innerHTML += '<br>MULTADO'
+            } else {
+                resultado.innerHTML = `Sua velcidade de <strong>${vel.value}KM/h</strong> está dentro do limite.`
+                resultado.innerHTML += '<br>SIGA SEU CAMINHO EM PAZ!'
+            }
+        }
+    </script>
+    
+</body>
+</html>

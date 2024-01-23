@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Condições</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        main {
+            background-color: white;
+            border-radius: 15px;
+            width: 450px;
+            min-height: 400px;
+            padding: 10px;
+            margin: 100px auto 0px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        main input, button {
+            width: 100%;
+        }
+
+        main input[type=text] {
+            font-size: 18pt;
+        }
+
+        main input[type=button] {
+            background-color: lightseagreen;
+            color: white;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Qual a sua nacionalidade?</h1>
+    <p>Digite ou escolha o seu país de nascimento:</p>
+    <p><input type="text" id="ipais" list="pais">
+        <datalist id="pais">
+        <option value="Brasil">Brasil</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Bolívia">Bolívia</option>
+        <option value="Chile">Chile</option>
+        <option value="Paraguai">Paraguai</option>        
+        <option value="Uruguai">Uruguai</option>
+    </datalist></p>
+    <p><input type="button" value="Verificar" onclick="verifica()"></p>
+        <div id="dados">
+
+        </div>     
+    </main>
+    
+    <script>
+        var nacao = window.document.getElementById('ipais')
+        var resul = window.document.getElementById('dados')
+        function verifica() {
+            if (nacao.value == 'Brasil') {    
+            resul.innerHTML = `<p>Como seu país de nascimento é ${nacao.value},`
+            resul.innerHTML += `então você é <strong>brasileiro</strong>!</p>`
+            resul.style.background = 'green'
+            resul.style.fontFamily = 'Arial'
+            resul.style.textAlign = 'center'
+            resul.style.padding = '10px'
+            resul.style.color = 'yellow'
+            resul.style.borderRadius = '8px'
+            } else {
+            resul.innerHTML = `<p>Como seu país de nascimento é ${nacao.value},`
+            resul.innerHTML += `então você é <strong>estrangeiro</strong>!</p>`
+            resul.style.background = 'blue'
+            resul.style.fontFamily = 'Arial'
+            resul.style.textAlign = 'center'
+            resul.style.padding = '10px'
+            resul.style.color = 'lightgreen'
+            resul.style.borderRadius = '8px'
+            }
+        }
+      
+          
+    </script>
+</body>
+</html>
