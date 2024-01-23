@@ -1,4 +1,5 @@
-var hoje = new Date()
+    function carregar() {
+        var hoje = new Date()
         var hora = hoje.getHours()
         var min  = hoje.getMinutes()
         var corpo = window.document.getElementById('ifundo')
@@ -21,3 +22,4 @@ var hoje = new Date()
             mhora.innerHTML = `<p>Agora são ${hora} horas e ${min} minutos.`
             foto.style.backgroundImage = 'url(imagens/noite.jpg)'
         }
+    }

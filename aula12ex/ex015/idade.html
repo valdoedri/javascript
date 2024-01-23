@@ -10,7 +10,7 @@
             background-color: black;
         }
 
-        h1#sauda {
+        header > h1 {
             font-size: 3em;
             color: white;
             text-align: center;
@@ -18,7 +18,7 @@
         }
 
         section {
-            width: 500px;
+            max-width: 500px;
             height: 450px;
             background-color: white;
             margin: auto;
@@ -26,20 +26,26 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.432);
         }
 
-        div#ihora > p {
+        div#form {
+            width: 440px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        div#idade > p {
             text-align: center;
             font-size: 1.4em;
-            padding: 50px;
         }
 
         div#ifoto {
             width: 200px;
             height: 200px;
-            background-color: black;
+            background-color: white;
+            box-shadow: 0px 0px 15px #4e4e4e;
             margin: auto;
             border-radius: 50%;
         }
-        footer {
+        footer > p {
             color: white;
             font-size: 1.2em;
             font-style: italic;
@@ -49,11 +55,24 @@
 </head>
 <body id="ifundo">
     <header>
-        <h1 id="sauda">Hora do Dia</h1>
+        <h1>Verificador de Idade</h1>
     </header>
     <section>
-        <div id="ihora">
-            <p>Agora são 14 horas</p>
+        <div id="form">
+            <p> 
+                <label for="inasc">Digite o ano do seu nascimento: </label>
+                <input type="number" id="inasc" min="1900" minlength="4">
+            </p>
+            <p>Qual o seu gênero: 
+            <input type="radio" name="sexo" id="imasc" value="M"><label for="imasc">Masculino</label>
+            <input type="radio" name="sexo" id="ifemi" value="F"><label for="ifemi">Feminino</label>
+            </p> 
+            <p>
+                <input type="button" value="Verificar" onclick="verifica()">
+            </p>
+        </div>
+        <div id="idade">
+            <p>Preencha os dados acima para ver o resultado.</p>
         </div>
         <div id="ifoto">
 
@@ -63,7 +82,14 @@
         <p>&copy; Lucivaldo Alves</p>
     </footer>
 
-    <script src="script.js">
+    <script>
+        var data = new Date()
+        var anoatual = data.getFullYear()
+        var genero = window.document.getElementsByName('sexo')
+        var sexo = genero.value
+        function verifica() {
+        alert(sexo)
+        }
     </script>
     
 </body>
