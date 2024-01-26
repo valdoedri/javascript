@@ -1,7 +1,9 @@
 var i = 1
-var a = "A"
-while(i < 10) {
-    console.log(`Tenho ${i} A nessa linha: ${a}`)
+while (i <= 10) {
+    if (i < 10) {
+   console.log(`${i} é menor que 10`)
+    } else {
+        console.log(`${i} é igual a 10`)
+    }
     i++
-    a = "A" + a
 }

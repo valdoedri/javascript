@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício contagem</title>   
+    <link rel="stylesheet" href="style.css">     
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+    <section>
+        <div id="form">
+            <p>Início:<br><input type="number" name="ini" id="ini"></p>
+            <p>Fim:<br><input type="number" name="fim" id="fim"></p>
+            <p>Passo:<br><input type="number" name="pas" id="pas" min="1"></p>
+            <p><input type="button" value="Contar" onclick="conta()"></p>
+        </div>
+        <div id="res">
+            Preparando a contagem...
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Lucivaldo Alves</p>
+    </footer>
+
+    <script>
+        function conta() {
+            var ini = window.document.getElementById('ini')
+            var fim = window.document.getElementById('fim')
+            var pas = window.document.getElementById('pas')
+            var res = window.document.getElementById('res')
+            var ni = Number(ini.value)
+            var nf = Number(fim.value)
+            var np = Number(pas.value)
+
+            if (np <= 0) { // verifica se o passo é menor ou igual a zero se sim MUDA para 1 
+                window.alert('O passo não pode ser menor ou igual zero, o PASSO será UM (1)')
+                np = 1
+            }
+
+            if (ini.value.length == 0 || fim.value.lenght == 0) { // verifica se inicio e fim estão vazios
+                res.innerHTML= 'Impossível contar, Início e Fim devem ser preenchidos.'
+
+            } else {
+                res.innerHTML = 'Contando...<br>' 
+                if (ni <= nf) { // faz a contagem progressiva 
+                    while (ni <= nf) {
+                    res.innerHTML += `${ni} \u{1F449}` // emoji mão apontando
+                    ni += np
+                    } 
+                } else { // faz a contagem regressiva
+                    while (ni >= nf) {
+                    res.innerHTML += `${ni} \u{1F449}` // emoji mão apontando
+                    ni -= np
+                    } 
+                }
+            res.innerHTML += ' &#x1F3C1' // emoji bandeira
+            }
+         
+        }
+    </script>
+    
+</body>
+</html>
