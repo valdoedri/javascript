@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Show Modal do Zero</title>
+    <style>
+        dialog::backdrop {
+            background-color: rgba(0, 0, 255, 0.322);
+        }
+
+        dialog {
+            border: none;
+            width: 450px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.493);
+        }
+    </style>
+</head>
+<body>
+    <p><button>Mostrar Caixa de Dialogo ShowModal</button></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae numquam quaerat, veniam fugit aperiam dolore, excepturi ipsum molestias assumenda aspernatur illum adipisci quam et ullam ab doloremque delectus nobis enim?</p>
+<dialog>
+    <h1>Teste caixa ShowModal</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quam est amet similique! Iusto aspernatur quis recusandae pariatur eos voluptatum enim quae. Eius blanditiis velit animi dicta aliquam laboriosam quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia facere quibusdam accusantium sint porro assumenda asperiores blanditiis, explicabo veritatis fuga! Distinctio quia quasi odio labore tenetur inventore sint aut beatae?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium porro exercitationem dignissimos maiores maxime qui? Doloribus rem, necessitatibus sequi aliquam blanditiis deserunt! Tempora consequatur quia a quam sunt ea quidem!</p>
+
+    <button>Fechar</button>
+</dialog>
+
+<script>
+    var btmostrar = window.document.querySelector('button')
+    var dialog    = document.querySelector('dialog')
+    var btfechar  = window.document.querySelector('dialog button')
+
+    btmostrar.onclick = function () {
+        dialog.showModal()
+    }
+
+    btfechar.onclick = function () {
+        dialog.close()
+    }
+
+</script>
+    
+</body>
+</html>
