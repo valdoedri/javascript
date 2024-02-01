@@ -53,7 +53,7 @@ function finalizar(){
     var res = window.document.getElementById('res')
     res.style.display = 'block' // Exibe a DIV#RES
     var total = 0
-    nums.sort() // coloca a array em ordem crescente      
+    nums.sort() // coloca a array em ordem crescente
     
     for (var c = 0; c < nums.length; c++) { // Soma todos os números dentro da array
         total = Number(total) + Number(nums[c]) 
