@@ -5,4 +5,4 @@
  <p>Agora é seguir caminhando/estudando...</p>
 
  <p>Clique no link a baixo e veja meu humilde portifólio realizado durante o curso...<br>
- <a href="https://valdoedri.github.io/cursodiscover/" target="_blank"><strong>HTML5 CSS3 JavaScript</Strong></a></p>
+ <a href="https://valdoedri.github.io/html-css/" target="_blank"><strong>HTML5 CSS3 JavaScript</Strong></a></p>
